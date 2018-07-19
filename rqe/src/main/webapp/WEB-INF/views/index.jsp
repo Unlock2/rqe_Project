@@ -22,27 +22,6 @@
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
-		
-		<style>
-				#paging {
-			        list-style-type:none;
-			}
-			    #paging li {      
-			        margin:3px;
-			        cursor:pointer;
-			        float:left;
-			        color: #666;
-			        font-size: 1.1em;
-			}
-			    #paging li.selected {      
-			        color: #0080ff;
-			        font-weight:bold;
-			}
-			    #paging li:hover {      
-			        color: #0080ff;
-			}
-	
-		</style>	
 </head>
 
 	<script>
@@ -59,7 +38,7 @@
 			};
 			$.ajax({ 
 					type: 'GET'
-					, url: 'http://192.168.0.20:8080/web/datasheet'	
+					, url: 'http://uw.iptime.org:4321/web/datasheet'	
 					, dataType: 'json'
 					, data: params
 				, success: function(data) { // 호출 성공
@@ -141,40 +120,6 @@
 				</div>
 			</div>
 			</div>
-	
-			
-			<div id="log"></div>
-			<!--현재는 페이징 영역 ID "paging" 으로 고정 -->
-				<ul id="paging">
-				</ul>
-				
-				<script>
-
-				//pager객체 생성
-				    var page = new pager();
-				
-				    //클릭했을때 사용할 콜백함수 지정. 
-				    //여기서는 테스트용함수 지정.
-				    //게시판 같은경우 리스트를 호출하는 함수 지정하면된다.
-				    page.buttonClickCallback = listContent;
-				    
-				    //테스트용.
-				    function listContent () {
-				        //console.log(pageCurrent);
-				        //alert(pageCurrent);        
-				        
-				        //Ajax 작업 (S)
-				
-				
-				        //페이징 처리를 위해 총레코드수를 매개변수로 전달해야함.
-				        page.renderpager(1001); 
-				        
-				        //Ajax 작업 (E)
-				    }
-				
-				    //최초 로딩시 실행.
-				    listContent();
-				</script>
 			
 </body>
 </html>

@@ -42,7 +42,8 @@ public class SampleServiceImpl implements SampleService {
         			+ "&end_date=" + end_date 
         			+ "&rqcode=" + rqcode;
         	
-            url = new URL("http://uw.iptime.org:4321/web/datasheet?" + param);
+//            url = new URL("http://uw.iptime.org:4321/web/datasheet?" + param);		// 운영서버
+            url = new URL("http://192.168.0.20:8080//web/datasheet?" + param);	// 테스트서버 (김옥겸차장PC)
             connection = url.openConnection();
 
             //내용을 읽어오기위한 InputStream객체를 생성한다..
@@ -56,33 +57,20 @@ public class SampleServiceImpl implements SampleService {
             
             JSONObject jsonObject = (JSONObject)jsonParser.parse(str);
             
-            //JSONObject rscode = (JSONObject)jsonObject.get("rscode");
-            //String success = (String)rscode.get("success");
-
             JSONArray datasheet = (JSONArray)jsonObject.get("datasheet");
             
-//            List list = new ArrayList();
-//            Map map = new HashMap();
-//            
-//            for(int i =0; i<datasheet.size(); i++) {
-//            	JSONObject data = (JSONObject)datasheet.get(i);
-//            	
-//            	
-//            	
-//            }
             System.out.println(datasheet);
             
-            
-           // System.out.println("list : "+ list.toString());
-            
-//            jsonObject = (JSONObject)parser.parse(responseBody);
-           // resData = (JSONArray)jsonObject.get("datasheet");  
-            
-        
        System.out.println("==============================================================================\n");
        
        return datasheet;
 	}
+
+//	@Override
+//	public List login() throws Exception {
+//		
+//		return null;
+//	}
 	
 
 }

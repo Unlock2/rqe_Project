@@ -21,6 +21,7 @@
 		</ul>
 		<!-- 현제 강조된 페이지에 a class="active" 삽입해 주세요 -->
 		<ul id="gnb" class="gnb">
+		
 			<li><a href="./home.do" class="active"><img src="../images/common/gnb_1.gif" alt="" /></a></li>
 			<li><a href="./bmtListRegistration_1.do"><img src="../images/common/gnb_2.gif" alt="" /></a></li>
 			<li><a href="./synthesisData_1.do"><img src="../images/common/gnb_3.gif" alt="" /></a></li>
